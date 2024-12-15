@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kwizz!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="bg-[#98ad23] min-h-screen">
+<!-- Login Page -->
+<div id="loginPage" class="flex flex-col items-center justify-center min-h-screen">
+    <h1 class="text-6xl font-bold text-white mb-8">Kwizz!</h1>
+
+    <div class="bg-white rounded-lg p-6 w-80 mb-4">
+        <input
+                type="text"
+                id="playerPin"
+                placeholder="Kwizz! PIN"
+                class="w-full p-2 border rounded mb-4 text-center"
+        >
+        <button
+                onclick="startGame()"
+                class="w-full bg-gray-800 text-white py-2 rounded hover:bg-gray-700"
+        >
+            Enter
+        </button>
+    </div>
+
+    <div class="text-center">
+        <img src="https://static.vecteezy.com/system/resources/previews/037/762/645/non_2x/ai-generated-wizard-isolated-on-transparent-background-free-png.png" alt="Wizard Image"
+        class="w-32 mx-auto mb-4" style="width: 220px">
+        <button
+                onclick="showHostPage()"
+                class="bg-gray-800 text-white px-8 py-2 rounded hover:bg-gray-700"
+        >
+            HOST
+        </button>
+    </div>
+</div>
+
+<!-- Quiz Page -->
+<div id="quizPage" class="hidden p-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4">Sozlamalar</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block mb-2">Savollar soni:</label>
+                    <select id="questionCount" class="w-full p-2 border rounded">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block mb-2">Qiyinlik darajasi:</label>
+                    <select id="difficulty" class="w-full p-2 border rounded">
+                        <option value="easy">Oson</option>
+                        <option value="medium">O'rta</option>
+                        <option value="hard">Qiyin</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block mb-2">Savol turi:</label>
+                    <select id="questionType" class="w-full p-2 border rounded">
+                        <option value="multiple">Multiple Choice</option>
+                        <option value="boolean">True/False</option>
+                    </select>
+                </div>
+            </div>
+            <button id="generateQuestions" class="mt-4 bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
+                Boshlash
+            </button>
+        </div>
+        <div id="generatedQuestions"></div>
+    </div>
+</div>
+</body>
+</html>

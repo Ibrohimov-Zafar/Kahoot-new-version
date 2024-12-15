@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+<header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">QuestionsHub</h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:text-blue-200">Home</a></li>
+                <li><a href="#" class="hover:text-blue-200">About</a></li>
+                <li><a href="#" class="hover:text-blue-200">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container mx-auto mt-8 px-4">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">Create Questions</h2>
+
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="mb-4">
+            <label
+                    for="questionCount"
+                    class="block text-gray-700 text-sm font-bold mb-2"
+            >
+                Savollar sonini (Number of Questions)
+            </label>
+            <select
+                    id="questionCount"
+                    name="questionCount"
+                    class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label
+                    for="difficulty"
+                    class="block text-gray-700 text-sm font-bold mb-2"
+            >
+                Qiyinlik darajasini (Difficulty Level)
+            </label>
+            <select
+                    id="difficulty"
+                    name="difficulty"
+                    class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
+                <option value="easy">Oson (Easy)</option>
+                <option value="medium">O'rta (Medium)</option>
+                <option value="hard">Qiyin (Hard)</option>
+            </select>
+        </div>
+
+        <div class="mb-6">
+            <label
+                    for="questionType"
+                    class="block text-gray-700 text-sm font-bold mb-2"
+            >
+                Savollar turini (Question Type)
+            </label>
+            <select
+                    id="questionType"
+                    name="questionType"
+                    class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
+                <option value="multiple-choice">
+                    Ko'p tanlovli (Multiple Choice)
+                </option>
+                <option value="boolean">To'g'ri/Noto'g'ri (True/False)</option>
+                <option value="multiple">Qisqa javob (Short Answer)</option>
+            </select>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <button id="generateQuestions">salom</button>
+        </div>
+    </div>
+
+    <div id="generatedQuestions" class="mt-8">
+
+        <div class="">
+            <h1 class="text-center font-bold text-4xl">Questions</h1>
+            <div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-gray-800 text-white mt-16 py-8">
+    <div class="container mx-auto text-center">
+    </div>
+</footer>
+</body>
+</html>
